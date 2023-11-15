@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.11.6 on win32)" generated="20231115 19:15:08.847" rpa="false" schemaversion="4">
+<suite id="s1" name="Register" source="C:\Users\Anssi\OneDrive\Opiskelu\Tietojenkäsittely HY\Ohjelmistotuotanto\palautusrepositorio\viikko3\login-robot\src\tests\register.robot">
+<test id="s1-t1" name="Register With Valid Username And Password" line="6">
+<kw name="Input New Command And Create User" type="SETUP">
+<kw name="Create User" library="AppLibrary">
+<arg>kalle</arg>
+<arg>kalle123</arg>
+<status status="PASS" starttime="20231115 19:15:08.947" endtime="20231115 19:15:08.947"/>
+</kw>
+<kw name="Input New Command" library="resource">
+<kw name="Input" library="AppLibrary">
+<arg>new</arg>
+<status status="PASS" starttime="20231115 19:15:08.947" endtime="20231115 19:15:08.947"/>
+</kw>
+<status status="PASS" starttime="20231115 19:15:08.947" endtime="20231115 19:15:08.947"/>
+</kw>
+<status status="PASS" starttime="20231115 19:15:08.947" endtime="20231115 19:15:08.947"/>
+</kw>
+<kw name="Input Credentials" library="resource">
+<arg>kalle</arg>
+<arg>kalle123</arg>
+<kw name="Input" library="AppLibrary">
+<arg>${username}</arg>
+<status status="PASS" starttime="20231115 19:15:08.947" endtime="20231115 19:15:08.947"/>
+</kw>
+<kw name="Input" library="AppLibrary">
+<arg>${password}</arg>
+<status status="PASS" starttime="20231115 19:15:08.947" endtime="20231115 19:15:08.947"/>
+</kw>
+<kw name="Run Application" library="AppLibrary">
+<status status="PASS" starttime="20231115 19:15:08.947" endtime="20231115 19:15:08.947"/>
+</kw>
+<status status="PASS" starttime="20231115 19:15:08.947" endtime="20231115 19:15:08.947"/>
+</kw>
+<kw name="Output Should Contain" library="AppLibrary">
+<arg>New user registered</arg>
+<msg timestamp="20231115 19:15:08.947" level="FAIL">Output "New user registered" is not in ['User with username kalle already exists']</msg>
+<status status="FAIL" starttime="20231115 19:15:08.947" endtime="20231115 19:15:08.947"/>
+</kw>
+<status status="FAIL" starttime="20231115 19:15:08.932" endtime="20231115 19:15:08.947">Output "New user registered" is not in ['User with username kalle already exists']</status>
+</test>
+<status status="FAIL" starttime="20231115 19:15:08.863" endtime="20231115 19:15:08.963"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Register">Register</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
