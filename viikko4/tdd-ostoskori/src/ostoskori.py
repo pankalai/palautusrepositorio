@@ -46,8 +46,18 @@ class Ostoskori:
         # palauttaa listan jossa on korissa olevat ostos-oliot
         # kukin ostos-olio siis kertoo mistä tuotteesta on kyse JA kuinka monta kappaletta kyseistä tuotetta korissa on
 
-    def hae_ostos_ostoskorista(self, haettava: Ostos):
+    def hae_ostos_ostoskorista(self, haettava: Tuote):
         for ostos in self._ostoskori:
             if ostos.tuotteen_nimi() == haettava.nimi():
                 return ostos
         return None
+
+        ## Vaihtoehtoinen tapa
+        # return next(
+        #     (
+        #         ostos
+        #         for ostos in self._ostoskori
+        #         if ostos.tuotteen_nimi() == haettava.nimi()
+        #     ),
+        #     None,
+        # )
