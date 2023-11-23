@@ -7,6 +7,7 @@ class TestOstoskori(unittest.TestCase):
     def setUp(self):
         self.kori = Ostoskori()
         self.maito = Tuote("Maito", 3)
+        self.leipa = Tuote("Leipä", 5)
 
     # 1
     def test_ostoskorin_hinta_ja_tavaroiden_maara_alussa(self):
@@ -25,16 +26,14 @@ class TestOstoskori(unittest.TestCase):
 
     # 4
     def test_kahden_eri_tuotteen_lisaamisen_jalkeen_korissa_kaksi_tavaraa(self):
-        leipa = Tuote("Leipä", 5)
         self.kori.lisaa_tuote(self.maito)
-        self.kori.lisaa_tuote(leipa)
+        self.kori.lisaa_tuote(self.leipa)
         self.assertEqual(self.kori.tavaroita_korissa(), 2)
 
     # 5
     def test_kahden_eri_tuotteen_lisaamisen_jalkeen_hinta_niiden_summa(self):
-        leipa = Tuote("Leipä", 5)
         self.kori.lisaa_tuote(self.maito)
-        self.kori.lisaa_tuote(leipa)
+        self.kori.lisaa_tuote(self.leipa)
         self.assertEqual(self.kori.hinta(), 8)
 
     # 6
@@ -67,3 +66,13 @@ class TestOstoskori(unittest.TestCase):
         ostos = self.kori.ostokset()[0]
         self.assertEqual(ostos.tuotteen_nimi(), "Maito")
         self.assertEqual(ostos.lukumaara(), 1)
+
+    # 10
+    def test_kahden_eri_tuotteen_lisaamisen_jalkeen_korissa_kaksi_ostosta(
+        self,
+    ):
+        self.kori.lisaa_tuote(self.maito)
+        self.kori.lisaa_tuote(self.leipa)
+
+        ostokset = self.kori.ostokset()
+        self.assertEqual(len(ostokset), 2)
