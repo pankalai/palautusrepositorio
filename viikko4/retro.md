@@ -1,1 +1,3 @@
-text text
+Glad, Sad, Mad -tekniikka on retrospektiivitekniikka, jossa kukin osallistuja listaa, mitkä asiat tekivät iloiseksi, surulliseksi tai hulluksi. Ryhmä äänestää, mistä asioista tulisi keskustella. Asiat käydään läpi eniten ääniä saaneesta aloittaen, sovitun aikarajan puitteissa (yleensä korkeintaan tunti).
+
+Start, Stop, Continue, More of, Less of Wheel -tekniikassa pyrkimyksenä on oppia, mitä asioita tulisi jatkaa ja mitä pitäisi muuttaa. Kategoriat ovat "mitä pitäisi alkaa tehdä", "minkä tekeminen pitäisi lopettaa", "minkä tekemistä pitäisi jatkaa", "mitä pitäisi tehdä enemmän" ja "mitä pitäisi tehdä vähemmän". Fasilitoija kerää vapaasti annettavaa palautetta jokaiseen kategoriaan ja kirjoittaa ne ylös tiivistetysti. Palautteenannon jälkeen on aikaa keskustelulle ja toteutettavien muutosten hyväksynnälle. Kesto yleensä alle puoli tuntia.
