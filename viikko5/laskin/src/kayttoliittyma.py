@@ -131,13 +131,13 @@ class Nollaus:
 
 
 class Kumoa:
-    def __init__(self, io, ed):
+    def __init__(self, io, komennot):
         self.io = io
-        self.komennot = ed
+        self.komennot = komennot
 
     def suorita(self):
         if not self.komennot:
             self.io.aseta_arvo(0)
             return
-        ed = self.komennot.pop()
-        ed.kumoa()
+
+        self.komennot.pop().kumoa()

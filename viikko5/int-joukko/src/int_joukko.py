@@ -1,21 +1,21 @@
 class IntJoukko:
-    KAPASITEETTI = 5
+    OLETUSKOKO = 5
     OLETUSKASVATUS = 5
 
     # tämä metodi on ainoa tapa luoda listoja
     def _luo_lista(self, koko):
         return [0] * koko
 
-    def __init__(self, kapasiteetti=None, kasvatuskoko=None):
-        self.kapasiteetti = (
-            kapasiteetti if self.parametri_validi(kapasiteetti) else self.KAPASITEETTI
+    def __init__(self, joukon_koko=None, kasvatuskoko=None):
+        self.joukon_koko = (
+            joukon_koko if self.parametri_validi(joukon_koko) else self.OLETUSKOKO
         )
 
         self.kasvatuskoko = (
             kasvatuskoko if self.parametri_validi(kasvatuskoko) else self.OLETUSKASVATUS
         )
 
-        self.ljono = self._luo_lista(self.kapasiteetti)
+        self.ljono = self._luo_lista(self.joukon_koko)
         self.alkioiden_lkm = 0
 
     def parametri_validi(self, parametri):
