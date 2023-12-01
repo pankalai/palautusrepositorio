@@ -70,55 +70,50 @@ class IntJoukko:
         )
 
 
-class Yhdiste(IntJoukko):
+class Operaatiot(IntJoukko):
     def __init__(self, a: IntJoukko, b: IntJoukko):
-        super(Yhdiste, self).__init__()
+        super(Operaatiot, self).__init__()
         self.IntJoukko1 = a
         self.IntJoukko2 = b
-        self.muodosta_yhdiste()
+        self.lista1 = self.IntJoukko1.to_int_list()
+        self.lista2 = self.IntJoukko2.to_int_list()
+        self.muodosta()
 
-    def muodosta_yhdiste(self):
-        a_lista = self.IntJoukko1.to_int_list()
-        b_lista = self.IntJoukko2.to_int_list()
+    def muodosta(self):
+        return
 
-        lista = sorted(a_lista + b_lista)
+
+class Yhdiste(Operaatiot):
+    def __init__(self, a: IntJoukko, b: IntJoukko):
+        super().__init__(a, b)
+
+    def muodosta(self):
+        lista = sorted(self.lista1 + self.lista2)
         self.lisaa(lista[0])
         for i in range(1, len(lista)):
             if lista[i] != lista[i - 1]:
                 self.lisaa(lista[i])
 
 
-class Leikkaus(IntJoukko):
+class Leikkaus(Operaatiot):
     def __init__(self, a: IntJoukko, b: IntJoukko):
-        super(Leikkaus, self).__init__()
-        self.IntJoukko1 = a
-        self.IntJoukko2 = b
-        self.muodosta_leikkaus()
+        super().__init__(a, b)
 
-    def muodosta_leikkaus(self):
-        a_lista = self.IntJoukko1.to_int_list()
-        b_lista = self.IntJoukko2.to_int_list()
-
-        lista = sorted(a_lista + b_lista)
+    def muodosta(self):
+        lista = sorted(self.lista1 + self.lista2)
         for i in range(len(lista) - 1):
             if lista[i] == lista[i + 1]:
                 self.lisaa(lista[i])
 
 
-class Erotus(IntJoukko):
+class Erotus(Operaatiot):
     def __init__(self, a: IntJoukko, b: IntJoukko):
-        super(Erotus, self).__init__()
-        self.IntJoukko1 = a
-        self.IntJoukko2 = b
-        self.muodosta_erotus()
+        super().__init__(a, b)
 
-    def muodosta_erotus(self):
-        a_lista = sorted(self.IntJoukko1.to_int_list())
-        b_lista = sorted(self.IntJoukko2.to_int_list())
-
+    def muodosta(self):
         j = 0
-        for i in range(len(a_lista)):
-            while j < len(b_lista) - 1 and b_lista[j] < a_lista[i]:
+        for i in range(len(self.lista1)):
+            while j < len(self.lista2) - 1 and self.lista2[j] < self.lista1[i]:
                 j += 1
-            if a_lista[i] != b_lista[j]:
-                self.lisaa(a_lista[i])
+            if self.lista1[i] != self.lista2[j]:
+                self.lisaa(self.lista1[i])
