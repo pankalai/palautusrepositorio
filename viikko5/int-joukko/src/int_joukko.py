@@ -70,9 +70,9 @@ class IntJoukko:
         )
 
 
-class Operaatiot(IntJoukko):
+class JoukkoOperaatiot(IntJoukko):
     def __init__(self, a: IntJoukko, b: IntJoukko):
-        super(Operaatiot, self).__init__()
+        super(JoukkoOperaatiot, self).__init__()
         self.IntJoukko1 = a
         self.IntJoukko2 = b
         self.lista1 = self.IntJoukko1.to_int_list()
@@ -83,7 +83,7 @@ class Operaatiot(IntJoukko):
         return
 
 
-class Yhdiste(Operaatiot):
+class Yhdiste(JoukkoOperaatiot):
     def __init__(self, a: IntJoukko, b: IntJoukko):
         super().__init__(a, b)
 
@@ -95,7 +95,7 @@ class Yhdiste(Operaatiot):
                 self.lisaa(lista[i])
 
 
-class Leikkaus(Operaatiot):
+class Leikkaus(JoukkoOperaatiot):
     def __init__(self, a: IntJoukko, b: IntJoukko):
         super().__init__(a, b)
 
@@ -106,7 +106,7 @@ class Leikkaus(Operaatiot):
                 self.lisaa(lista[i])
 
 
-class Erotus(Operaatiot):
+class Erotus(JoukkoOperaatiot):
     def __init__(self, a: IntJoukko, b: IntJoukko):
         super().__init__(a, b)
 
